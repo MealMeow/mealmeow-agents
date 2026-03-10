@@ -11,6 +11,9 @@ on:
         required: false
         default: 'research,database,learn,meta'
 
+permissions:
+  contents: write
+
 env:
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
@@ -77,7 +80,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: database-log
-          path: logs/database-*.log
+          path: logs/database-*.*
           retention-days: 30
 
   learn:
@@ -105,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: learn-log
-          path: logs/learn-*.log
+          path: logs/learn-*.*
           retention-days: 30
 
   meta:
