@@ -17,6 +17,8 @@
 |------|-------|--------|---------|
 | 2026-03-10 | database | completed | 0 items |
 | 2026-03-10 | learn | completed | 27 items |
+| 2026-03-10 | meta | completed | 0 items |
+| 2026-03-10 | report | completed | 0 items |
 | 2026-03-10 | research | completed | 3 items |
 
 ## Next Priorities
