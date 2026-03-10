@@ -1,11 +1,9 @@
 /**
  * send-weekly-report.js
- * Generates and sends a weekly summary of all pipeline activity.
- * Aggregates daily logs, database changes, and agent performance.
+ * Generates a weekly summary and writes it to GitHub Actions Job Summary.
+ * Aggregates daily logs and database stats — no email service needed.
  *
  * Required env vars:
- *   REPORT_EMAIL - recipient email address
- *   SENDGRID_API_KEY - SendGrid API key
  *   SUPABASE_URL - Supabase project URL
  *   SUPABASE_SERVICE_ROLE_KEY - Supabase service role key
  *
@@ -16,10 +14,9 @@ import fs from 'fs';
 import path from 'path';
 import { createClient } from '@supabase/supabase-js';
 
-const REPORT_EMAIL = process.env.REPORT_EMAIL;
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const GITHUB_STEP_SUMMARY = process.env.GITHUB_STEP_SUMMARY;
 
 // Get date range for the past week
 const now = new Date();
@@ -41,7 +38,6 @@ function collectWeeklyLogs() {
 
   const files = fs.readdirSync(logsDir);
   for (const file of files) {
-    // Check if file is from this week
     const dateMatch = file.match(/(\d{4}-\d{2}-\d{2})/);
     if (!dateMatch) continue;
     const fileDate = dateMatch[1];
@@ -101,107 +97,45 @@ async function fetchDatabaseStats() {
   };
 }
 
-// Format as markdown (saved to logs) and HTML (emailed)
+// Format as markdown
 function formatReport(stats, dbStats) {
-  const md = `# MealMeow Weekly Report
-## ${weekStart} to ${weekEnd}
+  const statusIcon = (s, f) => (f > 0 ? '❌' : '✅');
 
-### Database
-- Total foods: ${dbStats.foods}
-- Published articles: ${dbStats.articles}
-- Registered users: ${dbStats.users}
-- New foods this week: ${dbStats.recentFoods}
+  const agentRows = Object.entries(stats.agentStats)
+    .map(
+      ([name, s]) =>
+        `| ${statusIcon(name, s.failures)} ${name} | ${s.runs} | ${s.successes}/${s.runs} | ${s.totalItems} |`
+    )
+    .join('\n');
 
-### Pipeline Activity
-- Total agent runs: ${stats.totalRuns}
-${Object.entries(stats.agentStats)
-  .map(([name, s]) => `- **${name}**: ${s.runs} runs (${s.successes} ok, ${s.failures} failed) — ${s.totalItems} items`)
-  .join('\n')}
+  return `# 🐱 MealMeow Weekly Report
+**${weekStart} → ${weekEnd}**
 
-### Errors
-${stats.errors.length > 0 ? stats.errors.map((e) => `- ${e}`).join('\n') : 'None this week.'}
-`;
+## Database
 
-  const html = `
-    <div style="font-family:system-ui,sans-serif;max-width:600px;margin:0 auto">
-      <h2 style="color:#ea580c">MealMeow Weekly Report</h2>
-      <p style="color:#6b7280">${weekStart} to ${weekEnd}</p>
+| Metric | Count |
+|--------|-------|
+| Total foods | ${dbStats.foods} |
+| Published articles | ${dbStats.articles} |
+| Registered users | ${dbStats.users} |
+| New foods this week | ${dbStats.recentFoods} |
 
-      <h3 style="margin-top:24px">Database</h3>
-      <table style="width:100%;border-collapse:collapse">
-        <tr><td style="padding:6px 12px;border-bottom:1px solid #eee">Total foods</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600">${dbStats.foods}</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid #eee">Published articles</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600">${dbStats.articles}</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid #eee">Registered users</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600">${dbStats.users}</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid #eee">New foods this week</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600;color:#16a34a">${dbStats.recentFoods}</td></tr>
-      </table>
+## Pipeline Activity
+**${stats.totalRuns} total agent runs**
 
-      <h3 style="margin-top:24px">Pipeline Activity</h3>
-      <table style="width:100%;border-collapse:collapse">
-        <thead>
-          <tr style="background:#fff7ed">
-            <th style="padding:8px;text-align:left;border-bottom:2px solid #fed7aa">Agent</th>
-            <th style="padding:8px;text-align:left;border-bottom:2px solid #fed7aa">Runs</th>
-            <th style="padding:8px;text-align:left;border-bottom:2px solid #fed7aa">Success</th>
-            <th style="padding:8px;text-align:left;border-bottom:2px solid #fed7aa">Items</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${Object.entries(stats.agentStats)
-            .map(
-              ([name, s]) => `
-            <tr>
-              <td style="padding:8px;border-bottom:1px solid #eee;font-weight:600">${name}</td>
-              <td style="padding:8px;border-bottom:1px solid #eee">${s.runs}</td>
-              <td style="padding:8px;border-bottom:1px solid #eee;color:${s.failures > 0 ? '#dc2626' : '#16a34a'}">${s.successes}/${s.runs}</td>
-              <td style="padding:8px;border-bottom:1px solid #eee">${s.totalItems}</td>
-            </tr>`
-            )
-            .join('')}
-        </tbody>
-      </table>
+| Agent | Runs | Success | Items Processed |
+|-------|------|---------|-----------------|
+${agentRows || '| — | No runs this week | — | — |'}
 
-      ${
-        stats.errors.length > 0
-          ? `<h3 style="margin-top:24px;color:#dc2626">Errors (${stats.errors.length})</h3>
-             <ul>${stats.errors.map((e) => `<li style="color:#6b7280;font-size:14px">${e}</li>`).join('')}</ul>`
-          : '<p style="color:#16a34a;margin-top:16px">No errors this week.</p>'
-      }
-
-      <p style="color:#9ca3af;font-size:12px;margin-top:32px">Sent by MealMeow Agent Pipeline</p>
-    </div>
-  `;
-
-  return { md, html };
+${
+  stats.errors.length > 0
+    ? `## ⚠️ Errors (${stats.errors.length})\n${stats.errors.map((e) => `- \`${e}\``).join('\n')}`
+    : '## ✅ No errors this week'
 }
 
-// Send via SendGrid
-async function sendEmail(html, subject) {
-  if (!SENDGRID_API_KEY || !REPORT_EMAIL) {
-    console.log('No email credentials — printing report to stdout.');
-    return false;
-  }
-
-  const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${SENDGRID_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      personalizations: [{ to: [{ email: REPORT_EMAIL }] }],
-      from: { email: 'pipeline@mealmeow.com', name: 'MealMeow Pipeline' },
-      subject,
-      content: [{ type: 'text/html', value: html }],
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`SendGrid error ${res.status}: ${text}`);
-  }
-
-  console.log(`Weekly report sent to ${REPORT_EMAIL}`);
-  return true;
+---
+*Generated by MealMeow Agent Pipeline*
+`;
 }
 
 // Main
@@ -209,16 +143,20 @@ console.log(`Generating weekly report for ${weekStart} to ${weekEnd}...`);
 
 const stats = collectWeeklyLogs();
 const dbStats = await fetchDatabaseStats();
-const { md, html } = formatReport(stats, dbStats);
+const md = formatReport(stats, dbStats);
 
-// Save markdown report
+// Write to GitHub Actions Job Summary
+if (GITHUB_STEP_SUMMARY) {
+  fs.appendFileSync(GITHUB_STEP_SUMMARY, md);
+  console.log('Report written to GitHub Actions Job Summary');
+} else {
+  console.log(md);
+}
+
+// Save markdown report to logs
 const reportPath = path.resolve('logs', `weekly-report-${weekEnd}.md`);
 fs.writeFileSync(reportPath, md);
 console.log(`Report saved to ${reportPath}`);
-
-// Send email
-const subject = `MealMeow Weekly Report — ${weekStart} to ${weekEnd}`;
-await sendEmail(html, subject);
 
 // Print summary
 console.log(`\nTotal runs: ${stats.totalRuns}`);

@@ -133,11 +133,8 @@ jobs:
         run: node agents/meta-agent/run.js
         timeout-minutes: 10
 
-      - name: Send daily report
+      - name: Write daily report to Job Summary
         run: node scripts/send-report.js
-        env:
-          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Commit state updates
         run: |

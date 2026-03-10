@@ -40,8 +40,8 @@ Set these in GitHub repo Settings > Secrets and variables > Actions:
 | `SUPABASE_URL` | Supabase project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (bypasses RLS) |
 | `ANTHROPIC_API_KEY` | Claude API key for agent runs |
-| `REPORT_EMAIL` | Email address for pipeline reports |
-| `SENDGRID_API_KEY` | SendGrid API key for sending emails |
+
+Reports are written directly to the **GitHub Actions Job Summary** — visible in the Actions tab after each run. No email service needed.
 
 ### Manual Trigger
 Any workflow can be triggered manually from the Actions tab. The daily pipeline accepts an `agents` input to run specific agents:
