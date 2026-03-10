@@ -1,0 +1,14 @@
+{
+  "name": "mealmeow-agents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Automated agent pipeline for MealMeow cat food recommendation app",
+  "scripts": {
+    "report:daily": "node scripts/send-report.js",
+    "report:weekly": "node scripts/send-weekly-report.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  }
+}
