@@ -1,0 +1,27 @@
+{
+  "date": "2026-03-10",
+  "status": "completed",
+  "itemsProcessed": 3,
+  "tasks": [
+    {
+      "type": "enrich_summaries",
+      "count": 947,
+      "sample": [
+        "Fancy Feast - Flaked Tuna & Mackerel Feast Wet Cat Food",
+        "Hill's Prescription Diet - Digestive Care with Chicken Dry Cat Food",
+        "Merrick - Purrfect Bistro Simmered Beef, Tomato & Wild Rice Recipe Grilled Wet Cat Food",
+        "Hill's Prescription Diet - i/d Digestive Care with Chicken Wet Cat Food",
+        "Hill's Prescription Diet - k/d Kidney Care Chicken & Vegetable Stew Wet Cat Food"
+      ]
+    },
+    {
+      "type": "update_autoship_pricing",
+      "count": 14
+    },
+    {
+      "type": "find_images",
+      "count": 2
+    }
+  ],
+  "errors": []
+}

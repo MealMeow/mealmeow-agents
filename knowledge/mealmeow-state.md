@@ -1,51 +1,26 @@
 # MealMeow Project State
 
-> Auto-updated by the meta-agent after each pipeline run.
+> Auto-updated by the meta-agent on 2026-03-10
 
 ## Database Stats
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| Total cat foods | — | — |
-| Wet foods | — | — |
-| Dry foods | — | — |
-| Foods with autoship pricing | — | — |
-| Learn articles (published) | — | — |
-| Community posts | — | — |
-| Registered users | — | — |
+| Total cat foods | 1000 | 2026-03-10 |
+| Wet foods | 512 | 2026-03-10 |
+| Dry foods | 488 | 2026-03-10 |
+| Foods with autoship pricing | 986 | 2026-03-10 |
+| Learn articles (published) | 27 | 2026-03-10 |
+| Registered users | 7 | 2026-03-10 |
 
 ## Recent Pipeline Runs
 | Date | Agent | Status | Summary |
 |------|-------|--------|---------|
-| — | — | — | — |
-
-## Food Database Coverage
-### Brands Tracked
-- (meta-agent will populate)
-
-### Coverage Gaps
-- (meta-agent will populate)
-
-## Learn Articles Status
-### Published Categories
-| Category | Count | Last Added |
-|----------|-------|------------|
-| fundamentals | — | — |
-| reading-labels | — | — |
-| feeding-approaches | — | — |
-| life-stages | — | — |
-| hydration | — | — |
-| myths | — | — |
-
-### Content Gaps
-- (meta-agent will populate from learn-agent analysis)
-
-## Scoring & Nutrition
-- Scoring weights: Nutrition 35%, Value 30%, Suitability 35%
-- Rounding: 0.125 cup for dense dry foods (>=400 kcal/cup), 0.25 cup otherwise, 0.5 can for wet
-- Smart rounding post-pass corrects >5% deviation in multi-food plans
-
-## Known Issues
-- (meta-agent will populate)
+| 2026-03-10 | database | completed | 0 items |
+| 2026-03-10 | learn | completed | 27 items |
+| 2026-03-10 | research | completed | 3 items |
 
 ## Next Priorities
-- (meta-agent will populate)
+- Research: Expand food database coverage for underrepresented brands
+- Database: Fill missing summaries and autoship pricing
+- Learn: Write articles for uncovered topics
+- Display: No known bugs
