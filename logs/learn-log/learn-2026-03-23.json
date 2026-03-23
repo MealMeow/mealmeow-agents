@@ -1,0 +1,120 @@
+{
+  "date": "2026-03-23",
+  "status": "completed",
+  "itemsProcessed": 32,
+  "audit": {
+    "totalArticles": 32,
+    "byCategory": {
+      "fundamentals": {
+        "count": 6,
+        "titles": [
+          "Why Cats Are Obligate Carnivores",
+          "Essential Nutrients: Taurine, Arginine & More",
+          "Understanding Protein, Fat & Moisture Ratios",
+          "Why Carbs Are Largely Unnecessary for Cats",
+          "Omega-3 & Omega-6 Fatty Acids: Why the Ratio Matters",
+          "How MealMeow Scores & Ranks Cat Foods"
+        ]
+      },
+      "reading-labels": {
+        "count": 6,
+        "titles": [
+          "How to Read a Pet Food Label",
+          "Dry Matter Basis: The Key to Comparing Foods",
+          "What \"Complete and Balanced\" Actually Means",
+          "Ingredients to Watch Out For",
+          "Protein Quality: Why the Source Matters as Much as the Amount",
+          "Understanding Cat Food Labels: A Complete Guide"
+        ]
+      },
+      "feeding-approaches": {
+        "count": 5,
+        "titles": [
+          "Wet vs. Dry vs. Raw vs. Freeze-Dried",
+          "Free Feeding vs. Scheduled Meals",
+          "How to Transition to a New Food",
+          "Portion Sizing & Avoiding Overfeeding",
+          "Feeding Multiple Cats with Different Dietary Needs"
+        ]
+      },
+      "life-stages": {
+        "count": 6,
+        "titles": [
+          "Kitten vs. Adult vs. Senior Nutrition",
+          "Feeding Cats with Health Conditions",
+          "Indoor vs. Outdoor Calorie Needs",
+          "How to Body Condition Score Your Cat",
+          "Senior Cat Nutrition: Feeding Your Aging Feline",
+          "Kidney Disease Diet Guide for Cats"
+        ]
+      },
+      "hydration": {
+        "count": 4,
+        "titles": [
+          "Why Cats Have a Low Thirst Drive",
+          "How Food Moisture Affects Kidney Health",
+          "Getting a Picky Cat to Drink More Water",
+          "Hydration Strategies for Dry Food Cats"
+        ]
+      },
+      "myths": {
+        "count": 5,
+        "titles": [
+          "\"Grain-Free Is Always Better\" — The Nuance",
+          "Why Fish-Heavy Diets Can Be Problematic",
+          "The Raw Diet Debate: Benefits vs. Risks",
+          "The Senior Cat Protein Myth: Why Less Isn't More",
+          "Raw Diet Myths: What Science Really Says"
+        ]
+      }
+    }
+  },
+  "gaps": [
+    {
+      "type": "missing_topics",
+      "topics": [
+        {
+          "category": "fundamentals",
+          "topic": "Dental health and diet"
+        },
+        {
+          "category": "myths",
+          "topic": "Food allergies vs food intolerances"
+        },
+        {
+          "category": "feeding-approaches",
+          "topic": "Treats: how to pick and budget calories"
+        },
+        {
+          "category": "reading-labels",
+          "topic": "Reading supplement labels"
+        },
+        {
+          "category": "life-stages",
+          "topic": "Weight loss: safe rate and monitoring"
+        },
+        {
+          "category": "life-stages",
+          "topic": "Phosphorus and kidney disease management"
+        },
+        {
+          "category": "hydration",
+          "topic": "Water fountains vs bowls for cats"
+        },
+        {
+          "category": "fundamentals",
+          "topic": "Taurine: the essential amino acid for cats"
+        },
+        {
+          "category": "feeding-approaches",
+          "topic": "Raw feeding pros and cons"
+        },
+        {
+          "category": "myths",
+          "topic": "Grain-free diets and heart disease (DCM)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
