@@ -1,88 +1,93 @@
 # MealMeow Project State
 
-> Auto-updated by the meta-agent on 2026-03-27
+> Auto-updated by the meta-agent on 2026-03-30
 
 ## Database Stats
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| Total cat foods | 964 | 2026-03-27 |
-| Wet foods | 498 | 2026-03-27 |
-| Dry foods | 466 | 2026-03-27 |
-| Foods with autoship pricing | 964 | 2026-03-27 |
-| Learn articles (published) | 32 | 2026-03-27 |
-| Registered users | 14 | 2026-03-27 |
+| Total cat foods | 964 | 2026-03-30 |
+| Wet foods | 498 | 2026-03-30 |
+| Dry foods | 466 | 2026-03-30 |
+| Foods with autoship pricing | 964 | 2026-03-30 |
+| Learn articles (published) | 32 | 2026-03-30 |
+| Registered users | 14 | 2026-03-30 |
 
 ## Recent Pipeline Runs
 | Date | Agent | Status | Summary |
 |------|-------|--------|---------|
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | database | completed | 0 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 27 items |
-| 2026-03-27 | learn | completed | 32 items |
-| 2026-03-27 | learn | completed | 32 items |
-| 2026-03-27 | learn | completed | 32 items |
-| 2026-03-27 | learn | completed | 32 items |
-| 2026-03-27 | learn | completed | 32 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | meta | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | report | completed | 0 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 3 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
-| 2026-03-27 | research | completed | 2 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | database | completed | 0 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 27 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | learn | completed | 32 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | meta | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | report | completed | 0 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 3 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
+| 2026-03-30 | research | completed | 2 items |
 
 ## Next Priorities
 - Research: Expand food database coverage for underrepresented brands
