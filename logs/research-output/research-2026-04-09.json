@@ -1,0 +1,16 @@
+{
+  "date": "2026-04-09",
+  "status": "completed",
+  "itemsProcessed": 1,
+  "tasks": [
+    {
+      "type": "enrich_summaries",
+      "count": 2,
+      "sample": [
+        "Fussie Cat - Market Fresh Duck Meal Recipe Grain-Free Dry Cat Food",
+        "Nulo - FreeStyle Alaska Pollock & Sweet Potato Recipe with Omega Fatty Acids High Protein & Natural Grain-Free Senior Dry Cat Food"
+      ]
+    }
+  ],
+  "errors": []
+}
