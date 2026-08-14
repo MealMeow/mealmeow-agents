@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-14",
+  "status": "error",
+  "itemsProcessed": 0,
+  "audit": {},
+  "gaps": [],
+  "errors": [
+    "Failed to fetch articles: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure, transport failure reason: delayed connect error: 111"
+  ]
+}
