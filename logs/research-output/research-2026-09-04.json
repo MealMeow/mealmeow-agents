@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-04",
+  "status": "completed",
+  "itemsProcessed": 2,
+  "tasks": [
+    {
+      "type": "enrich_summaries",
+      "count": 852,
+      "sample": [
+        "Fancy Feast - Savory Chicken & Turkey Dry Cat Food",
+        "Iams - Proactive Health Healthy Adult Chicken Recipe Dry Cat Food",
+        "Royal Canin Veterinary Diet - Adult Urinary SO Dry Cat Food, 7.7-lb bag",
+        "Fancy Feast - with Savory Chicken & Turkey Dry Cat Food",
+        "Purina Pro Plan - Adult Sensitive Skin & Stomach Lamb & Rice Formula Dry Cat Food"
+      ]
+    },
+    {
+      "type": "update_autoship_pricing",
+      "count": 42
+    }
+  ],
+  "errors": []
+}
